@@ -51,7 +51,7 @@ a{
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 30px;
+  gap: 10px;
   background: transparent;
 }
 .main__card-card,
@@ -153,6 +153,9 @@ a{
 }
 .main__card-interaction-reply-outside{
   display: none;
+}
+.attribution{
+  font-size: 1.4rem;
 }
 
 @media screen and (min-width:500px) {
