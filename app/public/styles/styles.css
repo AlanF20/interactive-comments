@@ -1,0 +1,207 @@
+@font-face {
+  font-family: "Rubik-Regular";
+  src: url(/app/public/fonts/Rubik/static/Rubik-Regular.ttf);
+}
+@font-face {
+  font-family: "Rubik-Medium";
+  src: url(/app/public/fonts/Rubik/static/Rubik-Medium.ttf);
+}
+@font-face {
+  font-family: "Rubik-Bold";
+  src: url(/app/public/fonts/Rubik/static/Rubik-Bold.ttf);
+}
+:root {
+  --Moderate-blue: hsl(238, 40%, 52%);
+  --Soft-Red: hsl(358, 79%, 66%);
+  --Light-grayish-blue: hsl(239, 57%, 85%);
+  --Pale-red: hsl(357, 100%, 86%);
+
+  --Dark-blue: hsl(212, 24%, 26%);
+  --Grayish-Blue: hsl(211, 10%, 45%);
+  --Light-gray: hsl(223, 19%, 93%);
+  --Very-light-gray: hsl(228, 33%, 97%);
+  --White: hsl(0, 0%, 100%);
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  font-family: "Rubik-Regular";
+  font-size: 62.5%;
+  background: var(--Very-light-gray);
+}
+a{
+  font-weight: bold;
+  color: var(--Moderate-blue);
+}
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.main__card {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  background: transparent;
+}
+.main__card-card,
+.main__card-comment,
+.main__card-reply,
+.main__card-card-post{
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.main__card-reply,
+.main__card-card div{
+  background: var(--White);
+}
+.main__card-reply{
+  padding: 0;
+  width: 90%;
+  align-self: flex-end;
+}
+.main__card-user {
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main__card-user-img {
+  width: 15%;
+}
+.main__card-user-img img {
+  width: 40px;
+  height: 40px;
+}
+.main__card-user-name {
+  width: 35%;
+  font-family: "Rubik-Medium";
+  font-size: 1.4rem;
+  padding-left: 20px;
+}
+.main__card-user-postDate {
+  width: 50%;
+  font-family: "Rubik-Medium";
+  font-size: 1.4rem;
+  color: rgb(199, 196, 196);
+  text-align: right;
+}
+.main__card-content{
+    width: 95%;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    color: var(--Grayish-Blue);
+}
+
+.main__card-interaction{
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+}
+.main__card-interaction-buttons{
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background-color: var(--Light-gray);
+  font-size: 1.4rem;
+}
+.main__card-interaction-buttons-plus,
+.main__card-interaction-buttons-score,
+.main__card-interaction-buttons-pl{
+  width: 33.33333%;
+}
+.main__card-interaction-buttons-pl,
+.main__card-interaction-buttons-plus{
+  border: none;
+  height: 30px;
+  border-radius: 5px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main__card-interaction-buttons-score{
+  display: flex;
+  justify-content: center;
+  color: var(--Moderate-blue);
+}
+.main__card-interaction-reply-inside,
+.main__card-interaction-reply-outside{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: bold;
+  gap: 5px;
+  color: var(--Moderate-blue);
+}
+.main__card-interaction-reply-outside{
+  display: none;
+}
+
+@media screen and (min-width:500px) {
+  .main{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .main__card{
+    width: 100%;
+    max-width: 700px;
+  }
+  .main__card-content{
+    grid-area: content;
+  }
+  .main__card-user{
+    grid-area: user;
+  }
+  .main__card-interaction{
+    grid-area: button;
+  }
+  .main__card-interaction-buttons{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .main__card-interaction-reply-inside{
+    display: none;
+  }
+  .main__card-interaction-reply-outside{
+    display: flex;
+    grid-area: reply;
+  }
+  .main__card-card-post{
+    display: grid;
+    grid-template-areas: 
+    "button user create reply"
+    'button content content content'
+    'button content content content'
+  }
+  .main__card-comment{
+    display: grid;
+    grid-template-areas: 
+    "button user create reply"
+    'button content content content'
+    'button content content content'
+  }
+  .main__card-user-postDate{
+    padding-left: 20px;
+  }
+}
