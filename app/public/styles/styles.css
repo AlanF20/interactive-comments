@@ -157,7 +157,55 @@ a{
 .attribution{
   font-size: 1.4rem;
 }
+.main__post{
+  max-width: 700px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--White);
+  gap: 5px;
+  padding: 10px;
+  border-radius: 10px;
+}
+.main__post-send{
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+.main__post-send div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main__post-send-img{
+  width: 50px;
+  height: 50px;
+}
+.main__post-form{
+  width: 90%;
+}
 
+.inputPost{
+  width: 100%;
+  height: 100px;
+  font-family:"Rubik-Regular";
+  border: 1px solid #eee;
+  border-radius: 10px;
+  text-align: start;
+  padding: 5px;
+  font-family: "Rubik-Regular";
+  font-size: 1.4rem;
+}
+.main__post-btn{
+  padding: 10px;
+  font-family: "Rubik-Medium";
+  border: none;
+  background-color: var(--Moderate-blue);
+  color: white;
+  border-radius: 5px;
+}
 @media screen and (min-width:500px) {
   .main{
     width: 100%;
